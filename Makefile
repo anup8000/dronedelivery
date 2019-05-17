@@ -8,6 +8,10 @@
 	BINARY_PATH=./cmd/dronedelivery/
     INPUT_FILE_PATH=./assets/files/orders.txt
     OUTPUT_FILE_PATH=./assets/files/schedule.txt
+    DOCKER_IMAGE=anup8000/dronedelivery:0.1
+    DOCKERFILE=./build/package/dockerfile
+    DOCKERBUILD=docker build
+    DOCKERRUN=docker run
 
     
     all: test build
