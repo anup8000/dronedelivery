@@ -15,7 +15,7 @@ Alternatively, you can provide the input file and output file:
 ./cmd/dronedelivery/dronedelivery -i 
 ```
 
-If docker is your poison - the image can be found here: <https://cloud.docker.com/u/anup8000/repository/docker/anup8000/dronedelivery>
+If docker is your poison - the image can be found here: [docker image](https://cloud.docker.com/u/anup8000/repository/docker/anup8000/dronedelivery)
 The docker image is built with multi-stage builds and is just about ~3 MB!!
 
 ```docker
