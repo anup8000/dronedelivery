@@ -46,8 +46,9 @@ The reasons for using Go as a programming language for this assignment are:
   
 ### Design considerations
  
-Golang is a radically different language than Java or .NET or even NodeJS or Python for that matter. The creators and community users of Go have laid down certain precepts to adhere to. Some of the design considerations for this project are based on it.
+Golang is a radically different language than Java or C# or even NodeJS or Python for that matter. The creators and community users of Go have laid down certain precepts to adhere to. Some of the design considerations for this project are based on it.
 
+- Go is not object oriented in the sense as what Java or C# is. Code structure is opinionated and different from other OO based languages
 - Functional division: Code is divided based on function, not on layers
 - Functional co-location: Similar to earlier point, execution and tests are co-located based on function
 - Common artifacts are separated out from application logic code to their own packages
