@@ -1,0 +1,11 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name:  dronedelivery
+  namespace: dronedelivery
+spec:
+  template:
+    metadata:
+      name:  name
+    spec:
+      containers:
