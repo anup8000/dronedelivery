@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/anup8000/dronedelivery/internal/app/schedule"
 	"github.com/anup8000/dronedelivery/internal/pkg/errorhandler"
+	"github.com/anup8000/dronedelivery/internal/pkg/interfaces"
 	"github.com/jessevdk/go-flags"
 )
 
@@ -22,11 +21,13 @@ func main() {
 		return
 	}
 
+	var scheduler interfaces.IScheduler
+
 	//Process orders and create schedule
-	sch := schedule.NewSchedule(params.InputFilePath, params.OutputFilePath)
-	sch.ReadOrders()
-	sch.ProcessOrders()
-	sch.CalculatePromoterScore()
-	sch.WriteSchedules()
-	fmt.Printf("\n The net promoter score is %f%% \n", sch.NetPromoterScore)
+	scheduler = schedule.NewSchedule(params.InputFilePath, params.OutputFilePath)
+	scheduler.ReadOrders()
+	scheduler.ProcessOrders()
+	scheduler.CalculatePromoterScore()
+	scheduler.WriteSchedules()
+	//fmt.Printf("\n The net promoter score is %f%% \n", scheduler.NetPromoterScore)
 }

@@ -16,7 +16,7 @@
     
     all: test build
     install:
-			$(GOBUILD) $(BINARY_PATH)
+			$(GOBUILD) -o $(BINARY_PATH)$(BINARY_NAME) $(BINARY_PATH)
     test:
 			$(GOTEST) -v ./internal/pkg/fileops/
 			$(GOTEST) -v ./internal/app/schedule/
@@ -24,5 +24,5 @@
 			$(GOCLEAN)
 			rm -f $(BINARY_PATH)$(BINARY_NAME)
     run:
-			$(GOBUILD) $(BINARY_PATH)
+			$(GOBUILD) -o $(BINARY_PATH)$(BINARY_NAME) $(BINARY_PATH)
 			$(BINARY_PATH)$(BINARY_NAME) -i $(INPUT_FILE_PATH) -o $(OUTPUT_FILE_PATH)

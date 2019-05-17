@@ -113,10 +113,14 @@ func (schedule *Schedule) CalculatePromoterScore() {
 		}
 		//add any unprocessed orders to detractors
 		numdetractors = numdetractors + numorders - numschedules
-		fmt.Printf("Promoters: %d, Detractors (Including Incomplete Orders): %d", numpromoters, numdetractors)
+		fmt.Println("***************************************************************************************")
+		fmt.Printf(" Promoters: %d, Detractors (Including Incomplete Orders): %d", numpromoters, numdetractors)
 		promoterpercentage := float64(float64(numpromoters)/float64(numorders)) * 100.0
 		detractorpercentage := float64(float64(numdetractors)/float64(numorders)) * 100.0
 		schedule.NetPromoterScore = promoterpercentage - detractorpercentage
+		fmt.Printf("\n The net promoter score is %f%%", schedule.NetPromoterScore)
+		fmt.Printf("\n Schedules written to: %s\n", schedule.OutputFilePath)
+		fmt.Println("***************************************************************************************")
 	} else {
 		fmt.Println("No schedules to calculate scores on...")
 	}
