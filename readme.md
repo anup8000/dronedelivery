@@ -2,24 +2,30 @@
 
 ## Commands
 
-Below are convinience commands to test and run the program with all defaults
+Below are convinience commands to test and run the program with all defaults:
 
 ```go
 make test
 make run
 ```
 
-The below command will prompt for input file
+The below command will prompt for input file:
 
 ```go
 ./cmd/dronedelivery/dronedelivery
 ```
 
-If docker is your poison
+If docker is your poison - the image can be found here: https://cloud.docker.com/u/anup8000/repository/docker/anup8000/dronedelivery
 
 ```
 docker build -t anup8000/dronedelivery -f ./build/package/dockerfile .
 docker run --rm --name dronedelivery -v /Users/anup/projects/goprojects/drone-delivery/assets/files:/app anup8000/dronedelivery
+```
+
+Kubernetes:
+
+```
+kubectl apply -f ./deployments/kubernetes/deployment.yaml
 ```
 
 ## Assumptions

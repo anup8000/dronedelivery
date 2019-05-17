@@ -9,3 +9,7 @@ spec:
       name:  name
     spec:
       containers:
+      - name: dronedelivery
+        image: anup8000/dronedelivery
+      restartPolicy: Never
+  backoffLimit: 4
