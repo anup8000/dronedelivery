@@ -12,6 +12,6 @@ WORKDIR /app/cmd/dronedelivery
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o dronedelivery .
 
 FROM scratch
-COPY --from=builder /app/cmd/dronedelivery /app/
 WORKDIR /app
-CMD ["./dronedelivery -i ./app/orders.txt -o ./app/schedules.txt"]
+COPY --from=builder /app/cmd/dronedelivery /app
+CMD ["./dronedelivery", "-i", "./app/orders.txt", "-o", "./app/schedules.txt"]
